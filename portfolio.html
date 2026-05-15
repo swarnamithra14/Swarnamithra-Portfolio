@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Swarnamithra | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{--bg:#08060d;--bg2:#120816;--card:rgba(255,255,255,.05);--border:rgba(255,79,163,.18);--pink:#ff4fa3;--pink2:#d946ef;--text:#f8edf5;--muted:#bcaec0}
+*{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth} body{font-family:Inter,sans-serif;background:radial-gradient(circle at top right, rgba(255,79,163,.15), transparent 30%),linear-gradient(180deg,var(--bg),#050408);color:var(--text);overflow-x:hidden}
+body:before{content:'';position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.04) 1px, transparent 1px);background-size:24px 24px;opacity:.2}
+nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 6%;z-index:100;background:rgba(8,6,13,.7);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,79,163,.08)}
+.logo{font-family:Orbitron,sans-serif;font-weight:800;font-size:1.2rem;color:var(--text);text-decoration:none}.logo span{color:var(--pink)}
+.nav-links{display:flex;gap:28px;list-style:none}.nav-links a{text-decoration:none;color:var(--muted);font-size:.9rem}.nav-links a:hover{color:var(--pink)}
+.btn{padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:600;display:inline-block;transition:.3s}.btn-primary{background:linear-gradient(135deg,var(--pink),var(--pink2));color:white;box-shadow:0 0 30px rgba(255,79,163,.25)}.btn-outline{border:1px solid var(--border);color:var(--text)}
+section{padding:110px 6%}.hero{min-height:100vh;display:flex;align-items:center;position:relative}.glow{position:absolute;width:420px;height:420px;background:radial-gradient(circle,var(--pink),transparent 60%);filter:blur(90px);opacity:.18;right:-100px;top:80px}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}.eyebrow{color:var(--pink);letter-spacing:3px;font-size:.8rem;text-transform:uppercase}.hero h1{font-family:Orbitron,sans-serif;font-size:clamp(3rem,8vw,6rem);line-height:1}.hero p{margin:24px 0;color:var(--muted);font-size:1.05rem;line-height:1.8;max-width:650px}.role{font-size:1.1rem;color:#ffd4ea;height:32px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
+.avatar{
+  width: 320px;
+  height: 320px;
+  border-radius: 30px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 50px rgba(255,79,163,.12);
+
+  min-width: 320px;
+  min-height: 320px;
+  max-width: 320px;
+  max-height: 320px;
+}
+
+.avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.section-title{font-family:Orbitron;font-size:2.2rem;margin-bottom:14px}.section-sub{color:var(--muted);max-width:700px;line-height:1.8;margin-bottom:40px}
+.cards,.skills,.project-grid{display:grid;gap:20px}.cards{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.project-grid{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}.skills{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card,.skill-box,.project,.social a{background:var(--card);border:1px solid rgba(255,255,255,.06);padding:24px;border-radius:22px;backdrop-filter:blur(8px);transition:.35s}.card:hover,.project:hover{transform:translateY(-8px);border-color:var(--pink)}
+.badge{display:inline-block;padding:8px 12px;border-radius:999px;background:rgba(255,79,163,.12);color:#ffd6ea;font-size:.75rem;margin:6px 6px 0 0}.skill-box ul{list-style:none;margin-top:14px}.skill-box li{padding:8px 0;color:var(--muted)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:30px}.social a{display:block;text-decoration:none;color:var(--text);margin-bottom:12px}
+input,textarea{width:100%;padding:14px 16px;background:#120d18;border:1px solid rgba(255,255,255,.08);border-radius:14px;color:white;margin-bottom:14px} textarea{min-height:150px}
+footer{padding:40px 6%;border-top:1px solid rgba(255,255,255,.06);color:var(--muted);text-align:center}
+@media(max-width:900px){.hero-grid,.contact{grid-template-columns:1fr}.nav-links{display:none}.avatar{width:220px;height:220px;font-size:3rem;margin:auto}}
+</style>
+</head>
+<body>
+<nav><a class="logo" href="#">SWARNAMITHRA<span>.</span></a><ul class="nav-links"><li><a href="#about">About</a></li><li><a href="#interests">Interests</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul><a class="btn btn-outline" href="javascript:void(0)">View Resume</a></nav>
+<section class="hero"><div class="glow"></div><div class="hero-grid"><div><div class="eyebrow">Software Engineering Student</div><h1>BUILD. CREATE. EXPLORE.</h1><div class="role" id="role"></div><p>I'm a software engineering student who loves blending creativity with technology. I enjoy building web applications, experimenting with AI-based ideas, and designing interfaces that feel engaging and intuitive. Outside coding, I’m into content creation, photography, and storytelling through visuals.</p><div class="hero-actions"><a href="#projects" class="btn btn-primary">View Projects</a><a href="#contact" class="btn btn-outline">Hire Me</a></div></div><div class="avatar"><img src="myphoto.jpeg" alt="Swarnamithra"></div></div></section>
+<section id="about"><h2 class="section-title">About Me</h2><p class="section-sub">Creative developer with a growing passion for intelligent systems, web experiences, and visual storytelling.</p><div class="cards"><div class="card"><h3>Creative Tech</h3><p>Building projects that mix design thinking with engineering.</p></div><div class="card"><h3>AI Explorer</h3><p>Experimenting with APIs and smart solutions.</p></div><div class="card"><h3>Storyteller</h3><p>Photography, content creation, and expressive digital experiences.</p></div></div></section>
+<section id="interests"><h2 class="section-title">Areas of Interest</h2><div class="cards"><div class="card">Web Development</div><div class="card">Artificial Intelligence</div><div class="card">Content Creation</div><div class="card">UI / UX Design</div><div class="card">Photography</div></div></section>
+<section id="projects"><h2 class="section-title">Projects</h2><p class="section-sub">Projects that reflect both technical learning and practical creativity.</p><div class="project-grid"><div class="project"><h3>Mitti Mithra</h3><p>Nursery information web platform designed to help users explore plant varieties, nursery offerings, and smarter agricultural interactions through a modern interface.</p><div><span class="badge">Next.js</span><span class="badge">Gemini API</span><span class="badge">JavaScript</span><span class="badge">HTML</span><span class="badge">CSS</span></div></div><div class="project"><h3>File Authenticity Detector</h3><p>A hybrid project combining X86 Assembly logic and Python web integration to analyze and validate file authenticity.</p><div><span class="badge">X86 Assembly</span><span class="badge">Flask</span><span class="badge">Python</span><span class="badge">HTML</span><span class="badge">CSS</span></div><p style="margin-top:16px"><a class="btn btn-outline" href="https://github.com/swarnamithra14/File-Authenticity-Detector">GitHub Project</a></p></div></div></section>
+<section id="skills"><h2 class="section-title">Skills</h2><div class="skills"><div class="skill-box"><h3>Languages</h3><ul><li>C, C++</li><li>Java</li><li>Python</li><li>JavaScript</li><li>PHP</li><li>HTML / CSS</li></ul></div><div class="skill-box"><h3>Frameworks & Tech</h3><ul><li>Bootstrap</li><li>Next.js</li><li>Flask</li><li>Node.js</li><li>MySQL</li><li>REST APIs</li></ul></div><div class="skill-box"><h3>Tools</h3><ul><li>Git</li><li>GitHub</li><li>Canva</li><li>Responsive Web Design</li><li>UI / UX Basics</li></ul></div></div></section>
+<section id="contact"><h2 class="section-title">Let's Connect</h2><div class="contact"><div class="social"><a href="https://github.com/swarnamithra14">GitHub</a><a href="https://www.linkedin.com/in/swarnamithra-m-49384a338/">LinkedIn</a><a href="mailto:swarnamithra2006@gmail.com">swarnamithra2006@gmail.com</a><a href="https://instagram.com/not.yet.swarna">Instagram</a></div><div><input placeholder="Your Name"><input placeholder="Email Address"><textarea placeholder="Your message..."></textarea><button class="btn btn-primary">Send Message</button></div></div></section>
+<footer>Designed & built by Swarnamithra ♡</footer>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const roles=['Web Developer','AI Explorer','Content Creator','Creative Problem Solver']; let i=0,j=0,del=false; const role=document.getElementById('role')
+function type(){const t=roles[i]; role.textContent=del?t.slice(0,j--):t.slice(0,j++); if(!del&&j>t.length){del=true;setTimeout(type,1200);return;} if(del&&j<0){del=false;i=(i+1)%roles.length;} setTimeout(type, del?50:90);} type();
+gsap.utils.toArray('section,.card,.project,.skill-box,.social a').forEach(el=> gsap.from(el,{opacity:0,y:50,duration:0.9,scrollTrigger:{trigger:el,start:'top 85%'}}));
+</script>
+</body>
+</html>
